@@ -1,6 +1,5 @@
 import os, sys
 from typing import Tuple
-from loguru import logger
 
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 sys.path.append(os.path.dirname(SCRIPT_DIR))
