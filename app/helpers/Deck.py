@@ -1,8 +1,6 @@
-import os, sys
-from typing import Tuple
+"""Arquivo responsável por armazenar a classe Deck"""
 
-SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
-sys.path.append(os.path.dirname(SCRIPT_DIR))
+from typing import Tuple
 
 
 class Deck:
@@ -42,9 +40,8 @@ class Deck:
 
     def __str__(self) -> str:
         return """
-            Classe Deck:
-                Responsável por armazenar as informações do baralho utilizado 
-                nas partidas.
-                Params: 
-                    quantity: int -> name: str
+            Entidade responsável por armazenar as informações do baralho utilizado 
+            nas partidas.
+            Params: 
+                quantity: int -> name: str
         """

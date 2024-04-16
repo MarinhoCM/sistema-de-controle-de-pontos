@@ -1,4 +1,4 @@
-"""Arquivo responsável por armazenar o nucleo do desenvolvimento do app"""
+"""Arquivo responsável por armazenar o núcleo do desenvolvimento do app"""
 
 import os, sys
 
