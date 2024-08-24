@@ -12,8 +12,6 @@
 
 ## Informações Técnicas:
 - O sistema deverá ser criado para funcionar em celuláres.
-- Deverá ser utilizado em seu desenvolvimento apenas Python.
-- A metodologia de desenvolvimento deverá ser POO.
 - O sistema deverá possuir interface.
 - Para o registro de informações deverá ser utilizado banco de dados.
 
