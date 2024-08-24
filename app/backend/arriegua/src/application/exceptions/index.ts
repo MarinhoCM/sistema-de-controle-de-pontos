@@ -1,1 +1,1 @@
-// import * from './not-found.exception';
+import { PlayerNotFoundException } from "./not-found.exception";

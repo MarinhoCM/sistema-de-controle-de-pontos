@@ -5,7 +5,7 @@ import { PlayerRepository } from "src/application/repositories/players.repositor
 import { PlayerNotFoundException } from "src/application/exceptions/not-found.exception";
 
 export interface FindPlayerByIdUseCaseResquest {
-    id: number;
+    id: string;
 }
 
 export interface FindPlayerByIdUseCaseResponse {
@@ -25,7 +25,7 @@ export class FindPlayerByIdUseCase implements UseCase<FindPlayerByIdUseCaseResqu
         this.logger.log('Executando Caso de Uso `FindPlayerByIdUseCase (Buscar Jogador pelo Id)`');
         const { id } = request;
         const player = await this.playerRepository.findById(id);
-        
+
         if (!player) {
             throw new PlayerNotFoundException(id);
         }

@@ -8,5 +8,5 @@ export const serverConfig = {
 }
 
 export const databaseConfig = {
-    uri: env.get('DATABASE_URI').asString(),
+    uri: env.get('DATABASE_URL').asString(),
 }

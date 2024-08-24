@@ -9,14 +9,14 @@ export interface PlayerProps {
 
 export class PlayerEntity {
     private props: PlayerProps;
-    private _id: number;
+    private _id: string;
 
     constructor(
         props: ReplacePropsUtil<
             PlayerProps,
             { created?: Date, modified?: Date }
         >,
-        id?: number
+        id?: string
     ) {
         if (id) {
             this._id = id
@@ -29,11 +29,11 @@ export class PlayerEntity {
         }
     }
 
-    public set id(id: number) {
+    public set id(id: string) {
         this._id = id;
     }
 
-    public get id(): number {
+    public get id(): string {
         return this._id;
     }
 

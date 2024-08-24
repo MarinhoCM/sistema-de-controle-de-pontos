@@ -14,7 +14,7 @@ async function bootstrap() {
 
   app.enableShutdownHooks();
 
-  await app.listen(serverConfig.port, '0.0.0.0');
+  await app.listen(serverConfig.port);
 
   logger.log(`Servidor executando na porta ${serverConfig.port}`);
 }

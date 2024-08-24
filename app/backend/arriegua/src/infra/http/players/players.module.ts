@@ -1,10 +1,16 @@
 import { Module } from '@nestjs/common';
 import { PlayersController } from './players.controller';
-import { PlayersService } from './players.service';
+import { CreatePlayerUseCase, FindAllPlayerUseCase, FindPlayerByIdUseCase, UpdatePlayerNameUseCase } from 'src/application/use-cases/players';
+import { DatabaseModule } from 'src/infra/database/database.module';
 
 @Module({
-    imports: [],
+    imports: [DatabaseModule],
     controllers: [PlayersController],
-    providers: [PlayersService]
+    providers: [
+        CreatePlayerUseCase,
+        FindAllPlayerUseCase,
+        FindPlayerByIdUseCase,
+        UpdatePlayerNameUseCase
+    ]
 })
-export class PlayersModule {}
+export class PlayersModule { }
