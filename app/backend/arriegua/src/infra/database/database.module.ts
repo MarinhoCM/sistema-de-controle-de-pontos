@@ -6,7 +6,6 @@ import { PlayerRepository } from 'src/application/repositories/players.repositor
 @Module({
   providers: [
     PrismaService,
-    PrismaPlayerRepository,
     {
       provide: PlayerRepository,
       useClass: PrismaPlayerRepository,

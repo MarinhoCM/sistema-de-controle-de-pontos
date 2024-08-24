@@ -2,6 +2,7 @@ import { NestFactory } from '@nestjs/core';
 import { AppModule } from './app.module';
 import { serverConfig } from './config/settings.config';
 import { Logger, ValidationPipe } from '@nestjs/common';
+import { useContainer } from 'class-validator';
 
 async function bootstrap() {
   const logger = new Logger(bootstrap.name);
@@ -13,6 +14,7 @@ async function bootstrap() {
   }));
 
   app.enableShutdownHooks();
+  useContainer(app.select(AppModule), { fallbackOnErrors: true });
 
   await app.listen(serverConfig.port);
 

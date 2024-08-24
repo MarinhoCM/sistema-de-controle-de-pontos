@@ -15,9 +15,7 @@ export interface FindPlayerByIdUseCaseResponse {
 export class FindPlayerByIdUseCase implements UseCase<FindPlayerByIdUseCaseResquest, FindPlayerByIdUseCaseResponse> {
     private readonly logger = new Logger(FindPlayerByIdUseCase.name);
 
-    constructor(
-        private readonly playerRepository: PlayerRepository
-    ) { }
+    constructor(private readonly playerRepository: PlayerRepository) { }
 
     async execute(
         request: FindPlayerByIdUseCaseResquest

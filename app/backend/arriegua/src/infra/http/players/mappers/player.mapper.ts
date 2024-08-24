@@ -7,7 +7,7 @@ export class PlayerMapper {
             id: player.id,
             name: player.name,
             created: player.created,
-            updated: player.modified
+            modified: player.modified
         };
     }
 }

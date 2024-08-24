@@ -8,12 +8,12 @@ import { PrismaPlayerMapper } from "../mapper/prima-player.mapper";
 export class PrismaPlayerRepository implements PlayerRepository {
     private readonly logger = new Logger(PrismaPlayerRepository.name)
 
-    constructor(private readonly primaService: PrismaService) { }
+    constructor(private readonly prismaService: PrismaService) { }
 
     async create(player: PlayerEntity): Promise<PlayerEntity> {
         this.logger.log(`Iniciando registro de Jogador`);
         const playerPrismaData = PrismaPlayerMapper.toPrisma(player);
-        const createdPlayer = await this.primaService.player.create({
+        const createdPlayer = await this.prismaService.player.create({
             data: playerPrismaData,
         })
 
@@ -22,7 +22,7 @@ export class PrismaPlayerRepository implements PlayerRepository {
 
     async findById(id: string): Promise<PlayerEntity | null> {
         this.logger.log(`Iniciando busca por jogador ${id}`);
-        const playerPrismaData = await this.primaService.player.findFirst(
+        const playerPrismaData = await this.prismaService.player.findUnique(
             { where: { id: id } }
         );
         if (!playerPrismaData) return null
@@ -33,16 +33,15 @@ export class PrismaPlayerRepository implements PlayerRepository {
 
     async findAll(): Promise<PlayerEntity[]> {
         this.logger.log(`Iniciando busca por jogadores`);
-        const playerPrismaData = await this.primaService.player.findMany();
+        const playerPrismaData = await this.prismaService.player.findMany();
         const player = playerPrismaData.map(PrismaPlayerMapper.toDomain)
-
         return player;
     }
 
     async save(player: PlayerEntity): Promise<void> {
         this.logger.log(`Salvando dados do jogador id: ${player.id}`);
         const playerPrismaData = PrismaPlayerMapper.toPrisma(player);
-        await this.primaService.player.update({
+        await this.prismaService.player.update({
             where: { id: player.id },
             data: playerPrismaData
         });

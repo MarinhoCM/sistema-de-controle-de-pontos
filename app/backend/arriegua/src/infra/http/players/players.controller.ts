@@ -1,4 +1,4 @@
-import { Body, Controller, Get, Param, Patch, Post, UsePipes, ValidationPipe } from '@nestjs/common';
+import { Body, Controller, Get, Param, Patch, Post } from '@nestjs/common';
 import {
   CreatePlayerUseCase, FindAllPlayerUseCase,
   FindPlayerByIdUseCase, UpdatePlayerNameUseCase
