@@ -11,7 +11,7 @@
 - O sistema deverá manter um registro de vencedores das partidas.
 
 ## Informações Técnicas:
-- O sistema deverá ser criado para funcionar em celuláres.
+- O sistema deverá ser criado para funcionar mobile.
 - O sistema deverá possuir interface.
 - Para o registro de informações deverá ser utilizado banco de dados.
 
