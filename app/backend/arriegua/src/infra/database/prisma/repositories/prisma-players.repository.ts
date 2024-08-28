@@ -40,9 +40,10 @@ export class PrismaPlayerRepository implements PlayerRepository {
     async save(player: PlayerEntity): Promise<void> {
         this.logger.log(`Salvando dados do jogador id: ${player.id}`);
         const playerPrismaData = PrismaPlayerMapper.toPrisma(player);
+        const { id, ...data } = playerPrismaData;
         await this.prismaService.player.update({
             where: { id: player.id },
-            data: playerPrismaData
+            data
         });
     }
 }

@@ -36,13 +36,12 @@ export class PlayersController {
   }
 
   @Patch(':id')
-  async updatePlayerName(@Param() id: string, @Body() body: CreatePlayersBodyDto) {
+  async updatePlayerName(@Param('id') id: string, @Body() body: CreatePlayersBodyDto) {
     const { name } = body;
     const { player } = await this.updatePlayerNameUseCase.execute({
       id: id,
       params: { name }
     });
-
     return PlayerMapper.toDto(player);
   }
 }

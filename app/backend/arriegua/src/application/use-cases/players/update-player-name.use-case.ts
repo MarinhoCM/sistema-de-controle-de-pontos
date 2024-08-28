@@ -27,7 +27,6 @@ export class UpdatePlayerNameUseCase implements UseCase<UpdatePlayerNameRequest,
 
     async execute(request: UpdatePlayerNameRequest): Promise<UpdatePlayerNameResponse> {
         this.logger.log('Executando Caso de Uso "UpdatePlayerNameUseCase(Atualizar nome de Jogador)"');
-
         const { id, params } = request;
         const { name } = params;
         const player = await this.playerRepository.findById(id);
