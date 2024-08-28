@@ -27,7 +27,6 @@ export class PrismaPlayerRepository implements PlayerRepository {
         );
         if (!playerPrismaData) return null
         const player = PrismaPlayerMapper.toDomain(playerPrismaData);
-
         return player;
     }
 

@@ -25,7 +25,6 @@ export class PlayersController {
 
   @Get(":id")
   async findById(@Param() params: IdParamDto) {
-    console.log(`parametros: ${params.id}`)
     const { player } = await this.findPlayerByIdUseCase.execute(params);
     return PlayerMapper.toDto(player);
   }
